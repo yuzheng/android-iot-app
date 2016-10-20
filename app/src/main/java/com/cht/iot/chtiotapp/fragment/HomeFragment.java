@@ -7,8 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.cht.iot.chtiotapp.R;
+import com.cht.iot.chtiotapp.activity.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +29,10 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private Button devicesButton;
+    private Button registryButton;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -73,6 +79,31 @@ public class HomeFragment extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        devicesButton = (Button) getView().findViewById(R.id.deviceButton);
+
+        devicesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).showFragment("devices");
+                //
+            }
+        });
+
+        registryButton = (Button) getView().findViewById(R.id.registryButton);
+
+        registryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).showFragment("registry");
+                //
+            }
+        });
     }
 
     @Override

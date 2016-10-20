@@ -141,6 +141,19 @@ public class MainActivity extends AppCompatActivity {
         navigationView.getMenu().getItem(3).setActionView(R.layout.menu_dot);
     }
 
+    public void showFragment(String tag) {
+        Log.v("IoTApp", "showFragment:" + tag);
+
+        if ("devices".equalsIgnoreCase(tag)) {
+            navItemIndex = 1;
+            CURRENT_TAG = TAG_PHOTOS;
+        } else if("registry".equalsIgnoreCase(tag)) {
+            navItemIndex = 2;
+            CURRENT_TAG = TAG_MOVIES;
+        }
+        loadHomeFragment();
+    }
+
     /***
      * Returns respected fragment that user
      * selected from navigation menu
@@ -155,9 +168,10 @@ public class MainActivity extends AppCompatActivity {
 
         // if user select the current navigation menu again, don't do anything
         // just close the navigation drawer
+        Log.v("IoTApp","current_tag:"+CURRENT_TAG+", ("+getSupportFragmentManager().findFragmentByTag(CURRENT_TAG)+")");
         if (getSupportFragmentManager().findFragmentByTag(CURRENT_TAG) != null && !needRefresh) {
             drawer.closeDrawers();
-
+            Log.v("IoTApp","don't do anything");
             // show or hide the fab button
             //toggleFab();
             return;
@@ -242,15 +256,18 @@ public class MainActivity extends AppCompatActivity {
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()) {
                     //Replacing the main content with ContentFragment Which is our Inbox View;
-                    case R.id.home:
+                    case R.id.nav_home:
+                        Log.v("IoTApp","selected home");
                         navItemIndex = 0;
                         CURRENT_TAG = TAG_HOME;
                         break;
                     case R.id.nav_photos:
+                        Log.v("IoTApp","selected photos");
                         navItemIndex = 1;
                         CURRENT_TAG = TAG_PHOTOS;
                         break;
                     case R.id.nav_movies:
+                        Log.v("IoTApp","selected movies");
                         navItemIndex = 2;
                         CURRENT_TAG = TAG_MOVIES;
                         break;
