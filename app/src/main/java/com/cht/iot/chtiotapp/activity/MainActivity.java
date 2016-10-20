@@ -13,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean shouldLoadHomeFragOnBackPress = true;
     private Handler mHandler;
 
+    private String apiKey = "";
+    private boolean needRefresh = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
      * selected from navigation menu
      */
     private void loadHomeFragment() {
+
         // selecting appropriate nav menu item
         selectNavMenu();
 
@@ -151,13 +155,16 @@ public class MainActivity extends AppCompatActivity {
 
         // if user select the current navigation menu again, don't do anything
         // just close the navigation drawer
-        if (getSupportFragmentManager().findFragmentByTag(CURRENT_TAG) != null) {
+        if (getSupportFragmentManager().findFragmentByTag(CURRENT_TAG) != null && !needRefresh) {
             drawer.closeDrawers();
 
             // show or hide the fab button
             //toggleFab();
             return;
         }
+
+        // set refresh false
+        if(needRefresh) needRefresh = false;
 
         // Sometimes, when fragment has huge data, screen seems hanging
         // when switching between navigation menus
@@ -194,13 +201,15 @@ public class MainActivity extends AppCompatActivity {
     private Fragment getHomeFragment() {
         switch (navItemIndex) {
             case 0:
-                // home or setting
-                //HomeFragment homeFragment = new HomeFragment();
-                //return homeFragment;
-                // settings fragment
-                SettingsFragment settingsFragment = new SettingsFragment();
-                return settingsFragment;
-
+                if(!apiKey.isEmpty()) {
+                    // home or setting
+                    HomeFragment homeFragment = new HomeFragment();
+                    return homeFragment;
+                }else {
+                    // settings fragment
+                    SettingsFragment settingsFragment = new SettingsFragment();
+                    return settingsFragment;
+                }
             case 1:
                 // devices
                 DevicesFragment devicesFragment = new DevicesFragment();
@@ -361,6 +370,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if(requestCode == resultCode) {
+            apiKey = data.getStringExtra("apikey");
+        }
+
+        needRefresh = true;
+
+        loadHomeFragment();
+
+        super.onActivityResult(requestCode,resultCode, data);
     }
 
     /*

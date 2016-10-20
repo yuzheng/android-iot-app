@@ -32,5 +32,7 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="scan_qrcode">Scan QR-Code</string>
 
+    <string name="iot_platform">IoT 服務平台</string>
+
     <string name="link"><a href="https://iot.cht.com.tw/iot/doc/api">如何得知我的專案ApiKey?</a></string>
 </resources>

@@ -95,7 +95,8 @@ public class SettingsFragment extends Fragment {
             public void onClick(View v) {
 
                 Intent intent = new Intent(v.getContext(), BarcodeScanner.class);
-                startActivity(intent);
+                getActivity().startActivityForResult(intent, 1394);
+                //startActivity(intent);
             }
         });
     }

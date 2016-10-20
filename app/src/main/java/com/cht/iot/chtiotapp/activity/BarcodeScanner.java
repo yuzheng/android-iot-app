@@ -1,6 +1,7 @@
 package com.cht.iot.chtiotapp.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.hardware.Camera;
 import android.os.Bundle;
@@ -159,7 +160,7 @@ public class BarcodeScanner extends AppCompatActivity {
     };
 
 
-    private void showAlertDialog(String message) {
+    private void showAlertDialog(final String message) {
 
         new AlertDialog.Builder(this)
                 .setTitle(getResources().getString(R.string.app_name))
@@ -168,6 +169,15 @@ public class BarcodeScanner extends AppCompatActivity {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
+
+                        Intent intent = new Intent();
+                        intent.putExtra("apikey", message);
+                        setResult(1394, intent);
+
+                        mCamera.release();
+                        mCamera = null;
+
+                        finish();
                     }
                 })
 
