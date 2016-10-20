@@ -1,14 +1,21 @@
 package com.cht.iot.chtiotapp.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.cht.iot.chtiotapp.R;
+import com.cht.iot.chtiotapp.activity.BarcodeScanner;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +34,9 @@ public class SettingsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private TextView linkView;
+    private Button scannerButton;
 
     private OnFragmentInteractionListener mListener;
 
@@ -59,6 +69,8 @@ public class SettingsFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -66,6 +78,26 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // add link : how to know apikey
+        linkView = (TextView) getView().findViewById(R.id.link);
+        linkView.setMovementMethod(LinkMovementMethod.getInstance());
+
+        scannerButton = (Button) getView().findViewById(R.id.scannerButton);
+
+        scannerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(v.getContext(), BarcodeScanner.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // TODO: Rename method, update argument and hook method into UI event

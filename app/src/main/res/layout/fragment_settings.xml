@@ -4,14 +4,102 @@
     android:layout_height="match_parent"
     tools:context="com.cht.iot.chtiotapp.fragment.SettingsFragment">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
 
+        <TextView
+            android:text="歡迎使用 CHT IoT Android APP 框架"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp" />
 
+        <TextView
+            android:text="您目前尚未設定 ApiKey，煩請透過底下步驟設定 ApiKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:alpha="0.3"
-        android:src="@drawable/ic_settings_black_24dp" />
+        <TextView
+            android:text="1. 於 IoT 服務平台建立專案 \n2.於專案管理的權限資料查詢專案的 ApiKey \n3.於設定檔輸入您的專案 ApiKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:paddingLeft="16dp"
+            android:textSize="15sp"
+            android:lineSpacingExtra="6sp" />
+
+        <TextView
+            android:text="常見問題"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="@string/link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/link"
+            android:textColorLink="?attr/actionModeSplitBackground"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#ffFFFFCC"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:text="快速輸入專案 ApiKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7"
+                android:textSize="18sp"
+                android:textStyle="normal|bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:text="您可以透過掃描專案 ApiKey 的 QR Code 快速啟用 IoT APP 框架服務"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp" />
+
+            <Button
+                android:text="掃描 QR Code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scannerButton"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
 
 </FrameLayout>
