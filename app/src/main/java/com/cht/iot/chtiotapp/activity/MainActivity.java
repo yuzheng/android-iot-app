@@ -1,6 +1,7 @@
 package com.cht.iot.chtiotapp.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -31,7 +32,15 @@ import com.cht.iot.chtiotapp.fragment.DevicesFragment;
 import com.cht.iot.chtiotapp.fragment.SettingsFragment;
 import com.cht.iot.chtiotapp.other.CircleTransform;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+
 public class MainActivity extends AppCompatActivity {
+
+    private String APP_TAG;
 
     private NavigationView navigationView;
     private DrawerLayout drawer;
@@ -67,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
     private String apiKey = "";
     private boolean needRefresh = false;
 
+    private SharedPreferences prefs;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,6 +112,21 @@ public class MainActivity extends AppCompatActivity {
         });
         */
 
+        prefs = getSharedPreferences("iot.setting", MODE_PRIVATE);
+        apiKey = prefs.getString("key","");
+        if(apiKey.isEmpty()) {
+            Log.v(APP_TAG, "apikey is empty!");
+            // load config file
+            try {
+                JSONObject obj = new JSONObject(loadJSONConfig());
+                apiKey = obj.getString("apiKey");
+                Log.v(APP_TAG, "config json : apiKey :"+apiKey);
+            } catch (JSONException e) {
+                Log.e(APP_TAG,"json error!");
+            }
+        }
+
+
         // load nav menu header data
         loadNavHeader();
 
@@ -111,6 +138,22 @@ public class MainActivity extends AppCompatActivity {
             CURRENT_TAG = TAG_HOME;
             loadHomeFragment();
         }
+    }
+
+    private String loadJSONConfig(){
+        String json = null;
+
+        try {
+            InputStream is = getResources().openRawResource(R.raw.app);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            return null;
+        }
+        return json;
     }
 
     /***
@@ -350,7 +393,7 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
 
         // show menu only when home fragment is selected
-        if (navItemIndex == 0) {
+        if (navItemIndex == 0 && !apiKey.isEmpty()) {
             getMenuInflater().inflate(R.menu.main, menu);
         }
 
@@ -369,8 +412,17 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_logout) {
-            Toast.makeText(getApplicationContext(), "Logout user!", Toast.LENGTH_LONG).show();
+        if (id == R.id.action_remove_key) {
+            apiKey = "";
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.remove("key");
+            editor.commit();
+
+            // reload fragment
+            needRefresh = true;
+            loadHomeFragment();
+
+            Toast.makeText(getApplicationContext(), "remove api key!", Toast.LENGTH_LONG).show();
             return true;
         }
 
@@ -394,6 +446,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(requestCode == resultCode) {
             apiKey = data.getStringExtra("apikey");
+
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("key",apiKey);
+            //editor.apply();
+            editor.commit();
         }
 
         needRefresh = true;
