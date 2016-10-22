@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ChtIoTApp.iml" filepath="$PROJECT_DIR$/ChtIoTApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chtiotlib/chtiotlib.iml" filepath="$PROJECT_DIR$/chtiotlib/chtiotlib.iml" />
     </modules>
   </component>
 </project>
