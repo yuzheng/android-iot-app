@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi/iot_featured_image.png",
+        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/drawable-xxhdpi/iot_featured_image.png"
+    },
+    {
+        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_photo_library_black_24dp.png",
+        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/drawable-xxhdpi/ic_photo_library_black_24dp.png"
+    },
+    {
+        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_local_movies_black_24dp.png",
+        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/drawable-xxhdpi/ic_local_movies_black_24dp.png"
+    },
+    {
+        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_home_black_24dp.png",
+        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/drawable-xxhdpi/ic_home_black_24dp.png"
+    },
+    {
+        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi/image_gateway.png",
+        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/drawable-xxhdpi/image_gateway.png"
+    },
+    {
+        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_notifications_black_24dp.png",
+        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/drawable-xxhdpi/ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_settings_black_24dp.png",
+        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/drawable-xxhdpi/ic_settings_black_24dp.png"
+    }
+]

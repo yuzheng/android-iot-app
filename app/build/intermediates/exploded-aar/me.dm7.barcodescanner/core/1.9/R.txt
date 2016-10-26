@@ -1,0 +1,8 @@
+int attr shouldScaleToFill 0x7f010000
+int color viewfinder_border 0x7f030000
+int color viewfinder_laser 0x7f030001
+int color viewfinder_mask 0x7f030002
+int integer viewfinder_border_length 0x7f020000
+int integer viewfinder_border_width 0x7f020001
+int[] styleable BarcodeScannerView { 0x7f010000 }
+int styleable BarcodeScannerView_shouldScaleToFill 0
