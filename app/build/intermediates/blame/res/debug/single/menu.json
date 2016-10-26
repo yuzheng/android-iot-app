@@ -1,17 +1,5 @@
 [
     {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
-    },
-    {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\notifications.xml",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\menu\\notifications.xml"
-    },
-    {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\menu\\main.xml"
-    },
-    {
         "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
         "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
     },

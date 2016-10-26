@@ -1,10 +1,6 @@
 [
     {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
-    },
-    {
         "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
-        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     }
 ]

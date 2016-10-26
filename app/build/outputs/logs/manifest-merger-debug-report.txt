@@ -23,13 +23,18 @@ ADDED from D:\Andorid_Project\ChtIoTApp\app\src\main\AndroidManifest.xml:6:5-64
 		ADDED from D:\Andorid_Project\ChtIoTApp\app\src\main\AndroidManifest.xml:6:22-62
 application
 ADDED from D:\Andorid_Project\ChtIoTApp\app\src\main\AndroidManifest.xml:8:5-33:19
-MERGED from [com.android.support:design:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\design\24.0.0-beta1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0-beta1\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0-beta1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0-beta1\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:design:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\AndroidManifest.xml:23:5-20
 MERGED from [me.dm7.barcodescanner:zbar:1.9] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\zbar\1.9\AndroidManifest.xml:11:5-20
 MERGED from [me.dm7.barcodescanner:core:1.9] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\core\1.9\AndroidManifest.xml:11:5-20
-MERGED from [com.android.support:support-v4:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0-beta1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\AndroidManifest.xml:25:5-20
 	android:label
 		ADDED from D:\Andorid_Project\ChtIoTApp\app\src\main\AndroidManifest.xml:11:9-41
 	android:supportsRtl
@@ -78,17 +83,22 @@ ADDED from D:\Andorid_Project\ChtIoTApp\app\src\main\AndroidManifest.xml:30:9-32
 		ADDED from D:\Andorid_Project\ChtIoTApp\app\src\main\AndroidManifest.xml:31:13-52
 uses-sdk
 INJECTED from D:\Andorid_Project\ChtIoTApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:design:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\design\24.0.0-beta1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0-beta1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0-beta1\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0-beta1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0-beta1\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:design:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\AndroidManifest.xml:21:5-43
 MERGED from [com.android.support:multidex:1.0.1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
 MERGED from [me.dm7.barcodescanner:zbar:1.9] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\zbar\1.9\AndroidManifest.xml:7:5-9:41
 MERGED from [me.dm7.barcodescanner:core:1.9] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\core\1.9\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0-beta1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-media-compat:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:recyclerview-v7:24.2.1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-core-ui:24.2.1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:24.2.1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:24.0.0-beta1] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0-beta1\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:24.2.0] D:\Andorid_Project\ChtIoTApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from D:\Andorid_Project\ChtIoTApp\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Andorid_Project\ChtIoTApp\app\src\main\AndroidManifest.xml

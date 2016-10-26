@@ -1,9 +1,5 @@
 [
     {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
-    },
-    {
         "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
         "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }

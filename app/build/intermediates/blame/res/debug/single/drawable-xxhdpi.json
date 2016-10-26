@@ -8,20 +8,8 @@
         "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_settings_black_24dp.png"
     },
     {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_photo_library_black_24dp.png",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_photo_library_black_24dp.png"
-    },
-    {
         "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_local_movies_black_24dp.png",
         "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_local_movies_black_24dp.png"
-    },
-    {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_home_black_24dp.png",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_home_black_24dp.png"
-    },
-    {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_settings_black_24dp.png",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_settings_black_24dp.png"
     },
     {
         "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_photo_library_black_24dp.png",
@@ -32,27 +20,11 @@
         "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_home_black_24dp.png"
     },
     {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_local_movies_black_24dp.png",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_local_movies_black_24dp.png"
-    },
-    {
         "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\image_gateway.png",
         "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\image_gateway.png"
     },
     {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_notifications_black_24dp.png",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\ic_notifications_black_24dp.png"
-    },
-    {
         "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\iot_featured_image.png",
         "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\iot_featured_image.png"
-    },
-    {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\iot_featured_image.png",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\iot_featured_image.png"
-    },
-    {
-        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\image_gateway.png",
-        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\drawable-xxhdpi\\image_gateway.png"
     }
 ]

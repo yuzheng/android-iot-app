@@ -1,7 +1,7 @@
-#Sat Oct 22 11:38:43 CST 2016
-base.0=/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Wed Oct 26 15:21:18 CST 2016
+base.0=D\:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_64c5e3d89ba800ac4b466ed50e90dde6c35fb602
 renamed.1=classes2.dex
 renamed.0=classes.dex
-file.1=/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes2.dex
-base.1=/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
-file.0=/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.1=D\:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_b0166f60d32fd2e2303d68fcb4a716136c82ec4c\\classes.dex
+base.1=D\:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_b0166f60d32fd2e2303d68fcb4a716136c82ec4c
+file.0=D\:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_64c5e3d89ba800ac4b466ed50e90dde6c35fb602\\classes.dex
