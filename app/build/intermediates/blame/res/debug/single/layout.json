@@ -1,250 +1,498 @@
 [
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/nav_header_main.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/nav_header_main.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_settings.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\fragment_settings.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_list_menu_item_icon.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_navigation_item_header.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_bottom_sheet_dialog.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_bottom_sheet_dialog.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_list_menu_item_radio.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/app_bar_main.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/app_bar_main.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_devices.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\fragment_devices.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_action_bar_up_container.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_layout_snackbar_include.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\select_dialog_item_material.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_search_dropdown_item_icons_2line.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_action_bar_title_item.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/activity_privacy_policy.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/activity_privacy_policy.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_alert_dialog_button_bar_material.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_action_mode_close_item_material.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_search_view.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_big_media.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/activity_about_us.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/activity_about_us.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_select_dialog_material.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/notification_media_action.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_action_bar_view_list_nav_layout.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_popup_menu_item_layout.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_layout_snackbar.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_expanded_menu_layout.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/barcode_scanner.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/barcode_scanner.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/select_dialog_singlechoice_material.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\barcode_scanner.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\barcode_scanner.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_navigation_item.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/notification_template_part_chronometer.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_screen_simple.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_layout_tab_text.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about_us.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\activity_about_us.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/select_dialog_multichoice_material.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_navigation_menu_item.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_list_menu_item_layout.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_lines.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_action_mode_bar.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_layout_snackbar.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/notification_media_cancel_action.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/fragment_notifications.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/fragment_notifications.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/select_dialog_item_material.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_bar_main.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\app_bar_main.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_navigation_item_separator.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/fragment_settings.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/fragment_settings.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_item.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/fragment_devices.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/fragment_devices.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_big_media.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/notification_template_part_time.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_screen_toolbar.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_item_header.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/notification_template_media.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_layout_tab_text.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/fragment_registry.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/fragment_registry.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_action_menu_item_layout.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_bar_main.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\app_bar_main.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_dialog_title_material.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_settings.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\fragment_settings.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_popup_menu_header_item_layout.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/notification_template_big_media_narrow.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_screen_content_include.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_alert_dialog_material.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_navigation_item_subheader.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/menu_dot.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/menu_dot.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_action_menu_layout.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_item_header.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/notification_template_lines.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_layout_tab_icon.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/activity_main.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_activity_chooser_view.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/notification_template_big_media.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/support_simple_spinner_dropdown_item.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_list_menu_item_checkbox.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_privacy_policy.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\activity_privacy_policy.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_navigation_menu.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_privacy_policy.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\activity_privacy_policy.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/fragment_home.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/src/main/res/layout/fragment_home.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_layout_snackbar.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0-beta1/res/layout/design_menu_item_action_area.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_screen_simple_overlay_action_mode.xml"
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/Users/chttl/Documents/workspace/ChtIoTApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-beta1/res/layout/abc_activity_chooser_view_list_item.xml"
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_notifications.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about_us.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\activity_about_us.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\nav_header_main.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\nav_header_main.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_registry.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\fragment_registry.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu_dot.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\menu_dot.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\barcode_scanner.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\barcode_scanner.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_registry.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\fragment_registry.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\nav_header_main.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\nav_header_main.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_notifications.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu_dot.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\src\\main\\res\\layout\\menu_dot.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.0.0-beta1\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_devices.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\src\\main\\res\\layout\\fragment_devices.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "D:\\Users\\chttl\\Documents\\workspace\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "D:\\Andorid_Project\\ChtIoTApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0-beta1\\res\\layout\\abc_list_menu_item_layout.xml"
     }
 ]
