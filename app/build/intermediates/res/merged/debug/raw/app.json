@@ -1,8 +1,0 @@
-{
-    "apiServer": "https://iot.cht.com.tw/iot/",
-	"apiKey": "",
-    "appInfo": {
-        "name": "IOT TEST APP",
-        "description": null
-    }
-}
