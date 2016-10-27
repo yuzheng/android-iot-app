@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG_NOTIFICATIONS = "notifications";
     private static final String TAG_SETTINGS = "settings";
 
-    private static final String TAG_YEN = "YENhome";
+
     public static String CURRENT_TAG = TAG_HOME;
 
     // toolbar titles respected to selected nav menu item
