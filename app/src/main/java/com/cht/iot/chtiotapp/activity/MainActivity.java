@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean shouldLoadHomeFragOnBackPress = true;
     private Handler mHandler;
 
-    private String apiKey = "";
+    private static String apiKey = "";
     private boolean needRefresh = false;
 
     private SharedPreferences prefs;
@@ -471,4 +471,10 @@ public class MainActivity extends AppCompatActivity {
             fab.hide();
     }
     */
+
+    //Let other class can access apiKey to get more information
+    public static String getApiKey()
+    {
+        return apiKey;
+    }
 }

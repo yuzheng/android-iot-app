@@ -3,45 +3,52 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
     android:id="@+id/root"
-    android:gravity="left"
     android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="5dp"
+    android:layout_height="70dp"
+    android:gravity="fill_horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_DeviceFixedName"
+            android:id="@+id/tv_DeviceName"
             android:text="設備名稱"
-            android:textSize="16sp"
-            android:textAlignment="viewStart"
+            android:textSize="14sp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/iv_Icon"
-            android:layout_toEndOf="@+id/iv_Icon"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/colorPrimaryDark" />
+            android:layout_marginTop="11dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="sans-serif" />
 
         <TextView
             android:text="設備ONE"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_DeviceName"
-            android:layout_below="@+id/tv_DeviceFixedName"
+            android:id="@+id/tv_DeviceDesc"
+            android:layout_below="@+id/tv_DeviceName"
             android:layout_toRightOf="@+id/iv_Icon"
-            android:layout_toEndOf="@+id/iv_Icon"
             android:layout_marginTop="6dp"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="20dp"
+            android:ellipsize="end"
+            android:textSize="14sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:singleLine="true"
+            android:fontFamily="sans-serif" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:srcCompat="@drawable/image_gateway"
             android:id="@+id/iv_Icon"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="16dp" />
 </RelativeLayout>
 

@@ -7,6 +7,7 @@ package com.cht.iot.chtiotapp.other;
 public class ListItem {
 
     private String deviceName;
+    private String deviceDesc;
     private int imgSource;
 
     public String getDeviceName() {
@@ -23,5 +24,13 @@ public class ListItem {
 
     public void setImgSource(int imgSource) {
         this.imgSource = imgSource;
+    }
+
+    public String getDeviceDesc() {
+        return deviceDesc;
+    }
+
+    public void setDeviceDesc(String deviceDesc) {
+        this.deviceDesc = deviceDesc;
     }
 }

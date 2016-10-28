@@ -1,7 +1,9 @@
 package com.cht.iot.chtiotapp.fragment;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,8 +13,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cht.iot.chtiotapp.R;
+import com.cht.iot.chtiotapp.activity.MainActivity;
+import com.cht.iot.chtiotapp.other.ListItem;
 import com.cht.iot.chtiotapp.other.MyAdapter;
-import com.cht.iot.chtiotapp.other.MyData;
+import com.cht.iot.persistence.entity.api.IDevice;
+import com.cht.iot.service.api.OpenRESTfulClient;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,12 +41,19 @@ public class DevicesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private String ApiKey;
+    private String host = "iot.cht.com.tw";
+    private int port_RESTful = 80;
+
     private OnFragmentInteractionListener mListener;
 
     //create a instance of RecycleView
     private RecyclerView recyclerView;
     private MyAdapter adapter;
+    private View view;
+    private Context context;
 
+    private List<ListItem> listData;
 
     public DevicesFragment() {
         // Required empty public constructor
@@ -69,22 +85,104 @@ public class DevicesFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+        listData = new ArrayList<>();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.fragment_devices, container, false);
+        this.context = view.getContext();
 
-        View view = inflater.inflate(R.layout.fragment_devices, container, false);
-
-        //setting recycleview and give it an adapter
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycleview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        adapter = new MyAdapter(MyData.getListData(), view.getContext());
-        recyclerView.setAdapter(adapter);
+        //start the GetDevicesInfoTask to trigger RESTful connection to get the all device information to show on RecycleView
+        new GetDevicesInfoTask().execute();
 
         return view;
+    }
+
+    /*  AsyncTask enables proper and easy use of the UI thread.
+        This class allows you to perform background operations and publish results
+        on the UI thread without having to manipulate threads and/or handlers.
+    */
+    private class GetDevicesInfoTask extends AsyncTask<String, Integer, String>
+    {
+        //ProgressDialog instance
+        private ProgressDialog progressBar;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            //Get the ApiKey First
+            ApiKey = MainActivity.getApiKey();
+
+            //setting RecycleView and give it an adapter
+            recyclerView = (RecyclerView) view.findViewById(R.id.recycleview);
+            recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
+            //initialize the ProgressDialog
+            progressBar = new ProgressDialog(context);
+            progressBar.setMessage("讀取中...");
+            progressBar.setCancelable(false);
+            progressBar.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progressBar.show();
+
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            OpenRESTfulClient client = new OpenRESTfulClient(host, port_RESTful, ApiKey);
+
+            try {
+                IDevice[] devices = client.getDevices();
+                int length = devices.length;
+                float max = (float)length;
+                int progress = 0;
+
+                if(length != 0)
+                {
+                    for(int i = 0; i<length; i++) {
+                        ListItem item = new ListItem();
+                        item.setDeviceName(devices[i].getName());
+                        item.setDeviceDesc(devices[i].getDesc());
+                        item.setImgSource(R.drawable.image_gateway);
+                        listData.add(item);
+
+                        //Update the progress bar
+                        progress = Math.round(i/max) * 100;
+                        publishProgress(progress);
+                    }
+                }
+
+            }
+            catch (IOException o)
+            {
+                o.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            progressBar.setProgress(values[0]);
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            //Cancel progressDailog when it finished
+            progressBar.dismiss();
+
+            //ensure the devices data capture is finished so that we can send data to adapter
+            adapter = new MyAdapter(listData, context);
+            recyclerView.setAdapter(adapter);
+        }
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
