@@ -22,6 +22,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder>{
     private List<ListItem> listData;
     private LayoutInflater inflater;
 
+    private ItemClickCallBack itemClickCallBack;
+
+    public interface ItemClickCallBack{
+        void onItemClick(int position);
+    }
+
+    public void setItemClickCallBack (final ItemClickCallBack itemClickCallBack)
+    {
+        this.itemClickCallBack = itemClickCallBack;
+    }
+
     public MyAdapter(List<ListItem> listData, Context context)
     {
         this.listData = listData;
@@ -49,7 +60,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder>{
         return listData.size();
     }
 
-    class MyHolder extends RecyclerView.ViewHolder {
+    class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView tv_DeviceName;
         private TextView tv_DeviceDesc;
@@ -63,6 +74,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder>{
             tv_DeviceDesc = (TextView) itemView.findViewById(R.id.tv_DeviceDesc);
             img_Icon = (ImageView) itemView.findViewById(R.id.iv_Icon);
             container = itemView.findViewById(R.id.root);
+            container.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == R.id.root)
+            {
+                itemClickCallBack.onItemClick(getAdapterPosition());
+            }
+            else
+            {
+                Log.d("Click", "onClick error");
+            }
         }
     }
 

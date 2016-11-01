@@ -2,6 +2,7 @@ package com.cht.iot.chtiotapp.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 //import android.support.design.widget.FloatingActionButton;
@@ -29,6 +30,7 @@ import com.cht.iot.chtiotapp.R;
 import com.cht.iot.chtiotapp.fragment.HomeFragment;
 import com.cht.iot.chtiotapp.fragment.RegistryFragment;
 import com.cht.iot.chtiotapp.fragment.DevicesFragment;
+import com.cht.iot.chtiotapp.fragment.SensorFragment;
 import com.cht.iot.chtiotapp.fragment.SettingsFragment;
 import com.cht.iot.chtiotapp.other.CircleTransform;
 
@@ -38,7 +40,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SensorFragment.OnFragmentInteractionListener{
 
     private String APP_TAG;
 
@@ -59,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
     public static int navItemIndex = 0;
 
     // tags used to attach the fragments
-    private static final String TAG_HOME = "home";
-    private static final String TAG_PHOTOS = "photos";
-    private static final String TAG_MOVIES = "movies";
-    private static final String TAG_NOTIFICATIONS = "notifications";
-    private static final String TAG_SETTINGS = "settings";
+    public static final String TAG_HOME = "home";
+    public static final String TAG_DEVICES = "photos";
+    public static final String TAG_REGISTRY = "movies";
+    public static final String TAG_SENSOR = "notifications";
+    public static final String TAG_SETTINGS = "settings";
 
 
     public static String CURRENT_TAG = TAG_HOME;
@@ -138,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             navItemIndex = 0;
             CURRENT_TAG = TAG_HOME;
-            loadHomeFragment();
+            loadChosenFragment();
         }
     }
 
@@ -186,24 +188,11 @@ public class MainActivity extends AppCompatActivity {
         navigationView.getMenu().getItem(3).setActionView(R.layout.menu_dot);
     }
 
-    public void showFragment(String tag) {
-        Log.v("IoTApp", "showFragment:" + tag);
-
-        if ("devices".equalsIgnoreCase(tag)) {
-            navItemIndex = 1;
-            CURRENT_TAG = TAG_PHOTOS;
-        } else if("registry".equalsIgnoreCase(tag)) {
-            navItemIndex = 2;
-            CURRENT_TAG = TAG_MOVIES;
-        }
-        loadHomeFragment();
-    }
-
     /***
      * Returns respected fragment that user
      * selected from navigation menu
      */
-    private void loadHomeFragment() {
+    private void loadChosenFragment() {
 
         // selecting appropriate nav menu item
         selectNavMenu();
@@ -233,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // update the main content by replacing fragments
-                Fragment fragment = getHomeFragment();
+                Fragment fragment = getChosenFragment();
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
                         android.R.anim.fade_out);
@@ -257,7 +246,10 @@ public class MainActivity extends AppCompatActivity {
         invalidateOptionsMenu();
     }
 
-    private Fragment getHomeFragment() {
+
+    // get the Fragment which is chosen by user
+    // if not Fragment is chosen, then return home fragment to root container (app_bar_main.xml => R.id.frame)
+    private Fragment getChosenFragment() {
         switch (navItemIndex) {
             case 0:
                 if(!apiKey.isEmpty()) {
@@ -270,11 +262,11 @@ public class MainActivity extends AppCompatActivity {
                     return settingsFragment;
                 }
             case 1:
-                // devices
+                // devices fragment
                 DevicesFragment devicesFragment = new DevicesFragment();
                 return devicesFragment;
             case 2:
-                // movies fragment
+                // registry fragment
                 RegistryFragment registryFragment = new RegistryFragment();
                 return registryFragment;
             default:
@@ -309,12 +301,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_photos:
                         Log.v("IoTApp","selected photos");
                         navItemIndex = 1;
-                        CURRENT_TAG = TAG_PHOTOS;
+                        CURRENT_TAG = TAG_DEVICES;
                         break;
                     case R.id.nav_movies:
                         Log.v("IoTApp","selected movies");
                         navItemIndex = 2;
-                        CURRENT_TAG = TAG_MOVIES;
+                        CURRENT_TAG = TAG_REGISTRY;
                         break;
                     case R.id.nav_about_us:
                         // launch new intent instead of loading fragment
@@ -338,7 +330,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 menuItem.setChecked(true);
 
-                loadHomeFragment();
+                loadChosenFragment();
 
                 return true;
             }
@@ -382,7 +374,7 @@ public class MainActivity extends AppCompatActivity {
             if (navItemIndex != 0) {
                 navItemIndex = 0;
                 CURRENT_TAG = TAG_HOME;
-                loadHomeFragment();
+                loadChosenFragment();
                 return;
             }
         }
@@ -422,7 +414,7 @@ public class MainActivity extends AppCompatActivity {
 
             // reload fragment
             needRefresh = true;
-            loadHomeFragment();
+            loadChosenFragment();
 
             Toast.makeText(getApplicationContext(), "remove api key!", Toast.LENGTH_LONG).show();
             return true;
@@ -457,7 +449,7 @@ public class MainActivity extends AppCompatActivity {
 
         needRefresh = true;
 
-        loadHomeFragment();
+        loadChosenFragment();
 
         super.onActivityResult(requestCode,resultCode, data);
     }
@@ -476,5 +468,10 @@ public class MainActivity extends AppCompatActivity {
     public static String getApiKey()
     {
         return apiKey;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
