@@ -15,8 +15,10 @@ import android.view.ViewGroup;
 
 import com.cht.iot.chtiotapp.R;
 import com.cht.iot.chtiotapp.activity.MainActivity;
-import com.cht.iot.chtiotapp.other.ListItem;
-import com.cht.iot.chtiotapp.other.MyAdapter;
+import com.cht.iot.chtiotapp.other.DeviceAdapter;
+import com.cht.iot.chtiotapp.other.DeviceItem;
+import com.cht.iot.chtiotapp.other.DividerItemDecoration;
+import com.cht.iot.chtiotapp.other.RESTful;
 import com.cht.iot.persistence.entity.api.IDevice;
 import com.cht.iot.service.api.OpenRESTfulClient;
 
@@ -32,7 +34,7 @@ import java.util.List;
  * Use the {@link DevicesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DevicesFragment extends Fragment implements MyAdapter.ItemClickCallBack{
+public class DevicesFragment extends Fragment implements DeviceAdapter.ItemClickCallBack{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -40,25 +42,23 @@ public class DevicesFragment extends Fragment implements MyAdapter.ItemClickCall
 
     public static final String DEVICE_NAME = "DEVICE_NAME";
     public static final String DEVICE_DESC = "DEVICE_DESC";
-    public static final String IMG_SOURCE = "IMG_SOURCE";
+    public static final String DEVICE_ID = "DEVICE_ID";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private String ApiKey;
-    private String host = "iot.cht.com.tw";
-    private int port_RESTful = 80;
 
     private OnFragmentInteractionListener mListener;
 
     //create a instance of RecycleView
     private RecyclerView recyclerView;
-    private MyAdapter adapter;
+    private DeviceAdapter adapter;
     private View view;
     private Context context;
 
-    private List<ListItem> listData;
+    private List<DeviceItem> listData;
 
     public DevicesFragment() {
         // Required empty public constructor
@@ -110,20 +110,21 @@ public class DevicesFragment extends Fragment implements MyAdapter.ItemClickCall
     // call the SensorFragment from DeviceFragment
     public void onItemClick(int p) {
 
-        ListItem item = listData.get(p);
+        DeviceItem item = listData.get(p);
         Bundle extras = new Bundle();
         extras.putString(DEVICE_NAME, item.getDeviceName());
         extras.putString(DEVICE_DESC, item.getDeviceDesc());
-        extras.putInt(IMG_SOURCE, item.getImgSource());
+        extras.putString(DEVICE_ID, item.getDeviceId());
 
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
 
         SensorFragment sf = new SensorFragment();
         sf.setArguments(extras);
 
-        fragmentTransaction.replace(R.id.frame,  sf, MainActivity.TAG_DEVICES);
-        fragmentTransaction.commitAllowingStateLoss();
+        ft.replace(R.id.frame,  sf, MainActivity.TAG_DEVICES);
+        ft.addToBackStack(null);
+        ft.commit();
 
     }
 
@@ -159,7 +160,7 @@ public class DevicesFragment extends Fragment implements MyAdapter.ItemClickCall
         @Override
         protected String doInBackground(String... params) {
 
-            OpenRESTfulClient client = new OpenRESTfulClient(host, port_RESTful, ApiKey);
+            OpenRESTfulClient client = new OpenRESTfulClient(RESTful.HOST, RESTful.PORT, ApiKey);
 
             try {
                 IDevice[] devices = client.getDevices();
@@ -170,10 +171,11 @@ public class DevicesFragment extends Fragment implements MyAdapter.ItemClickCall
                 if(length != 0)
                 {
                     for(int i = 0; i<length; i++) {
-                        ListItem item = new ListItem();
+                        DeviceItem item = new DeviceItem();
                         item.setDeviceName(devices[i].getName());
                         item.setDeviceDesc(devices[i].getDesc());
-                        item.setImgSource(R.drawable.image_gateway);
+                        item.setDeviceId(devices[i].getId());
+                        item.setImgSource(R.mipmap.image_gateway);
                         listData.add(item);
 
                         //Update the progress bar
@@ -201,11 +203,14 @@ public class DevicesFragment extends Fragment implements MyAdapter.ItemClickCall
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
-            //Cancel progressDailog when it finished
+            //Cancel progressDialog when it finished
             progressBar.dismiss();
 
             //ensure the devices data capture is finished so that we can send data to adapter
-            adapter = new MyAdapter(listData, context);
+            adapter = new DeviceAdapter(listData, context);
+
+            recyclerView.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
+
             recyclerView.setAdapter(adapter);
             adapter.setItemClickCallBack(DevicesFragment.this);
         }

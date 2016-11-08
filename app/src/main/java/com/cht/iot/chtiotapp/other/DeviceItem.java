@@ -4,10 +4,12 @@ package com.cht.iot.chtiotapp.other;
  * Created by user on 2016/10/26.
  */
 
-public class ListItem {
+public class DeviceItem {
 
     private String deviceName;
     private String deviceDesc;
+    private String deviceId;
+
     private int imgSource;
 
     public String getDeviceName() {
@@ -24,6 +26,14 @@ public class ListItem {
 
     public void setImgSource(int imgSource) {
         this.imgSource = imgSource;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 
     public String getDeviceDesc() {

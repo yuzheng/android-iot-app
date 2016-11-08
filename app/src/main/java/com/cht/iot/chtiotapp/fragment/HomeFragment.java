@@ -88,8 +88,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 fragmentTransaction.replace(R.id.frame, new DevicesFragment(), MainActivity.TAG_DEVICES);
-                fragmentTransaction.commitAllowingStateLoss();
-
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
             }
         });
 

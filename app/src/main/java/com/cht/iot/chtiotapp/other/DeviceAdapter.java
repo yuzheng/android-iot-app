@@ -17,9 +17,9 @@ import java.util.List;
  * Created by user on 2016/10/26.
  */
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder>{
+public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.MyHolder>{
 
-    private List<ListItem> listData;
+    private List<DeviceItem> listData;
     private LayoutInflater inflater;
 
     private ItemClickCallBack itemClickCallBack;
@@ -33,12 +33,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder>{
         this.itemClickCallBack = itemClickCallBack;
     }
 
-    public MyAdapter(List<ListItem> listData, Context context)
+    public DeviceAdapter(List<DeviceItem> listData, Context context)
     {
         this.listData = listData;
         inflater = LayoutInflater.from(context);
 
-        Log.d("MyAdapter", Integer.toString(listData.size()));
+        Log.d("DeviceAdapter", Integer.toString(listData.size()));
     }
 
     @Override
@@ -49,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder>{
 
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
-        ListItem item = listData.get(position);
+        DeviceItem item = listData.get(position);
         holder.tv_DeviceName.setText(item.getDeviceName());
         holder.tv_DeviceDesc.setText(item.getDeviceDesc());
         holder.img_Icon.setImageResource(item.getImgSource());

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:id="@+id/list_Sensor"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_height="50dp">
+
+    <ImageView
+        android:layout_height="match_parent"
+        app:srcCompat="@mipmap/image_gateway"
+        android:id="@+id/iv_small_Sensor"
+        android:scaleType="center"
+        android:layout_width="55dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/tv_sensorName"
+        android:layout_weight="0.89"
+        android:gravity="center"
+        android:textAlignment="viewStart"
+        android:paddingLeft="15dp" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/image_gateway"
+        android:id="@+id/imgbtn_SensorStore"
+        android:layout_marginRight="15dp" />
+
+    <Button
+        android:text="23"
+        android:layout_height="match_parent"
+        android:id="@+id/btn_InputTextOrNum"
+        android:layout_weight="1"
+        android:autoText="true"
+        android:textSize="14sp"
+        android:background="@drawable/my_button"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_light"
+        android:layout_width="60dp" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:layout_width="54dp"
+        android:id="@+id/tgbtn_SensorStore"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:textSize="12sp"
+        android:layout_marginRight="15dp" />
+
+</LinearLayout>

@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.support.design.widget.NavigationView;
 //import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -223,11 +224,11 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
             public void run() {
                 // update the main content by replacing fragments
                 Fragment fragment = getChosenFragment();
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
-                        android.R.anim.fade_out);
-                fragmentTransaction.replace(R.id.frame, fragment, CURRENT_TAG);
-                fragmentTransaction.commitAllowingStateLoss();
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+                ft.addToBackStack(null);
+                ft.replace(R.id.frame, fragment, CURRENT_TAG);
+                ft.commit();
             }
         };
 
@@ -361,6 +362,22 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
 
     @Override
     public void onBackPressed() {
+
+        FragmentManager fm = this.getSupportFragmentManager();
+
+        Log.e("BACK", "BACK BACK");
+
+        if(fm.getBackStackEntryCount() == 0)
+        {
+            //this.finish();
+            //Log.d("STACK", "MainActivity => STACK ZERO COUNT");
+        }
+        else
+        {
+            //fm.popBackStack();
+            //Log.d("STACK", "MainActivity => Fragment popBackStack");
+        }
+
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawers();
             return;
@@ -474,4 +491,6 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+
 }
