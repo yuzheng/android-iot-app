@@ -23,7 +23,7 @@ public class SensorItem {
     public static final String IMAGEBTN= "IMAGEBTN";
     public static final String BUTTON = "BUTTON";
 
-    private String senserName;
+    private String sensorName;
     private int sensorIcon;
     private boolean sensorToggleBtn;
     private String sensorTextOrNumber;
@@ -54,12 +54,12 @@ public class SensorItem {
         this.sensorTextOrNumber = sensorTextOrNumber;
     }
 
-    public String getSenserName() {
-        return senserName;
+    public String getSensorName() {
+        return sensorName;
     }
 
-    public void setSenserName(String senserName) {
-        this.senserName = senserName;
+    public void setSensorName(String sensorName) {
+        this.sensorName = sensorName;
     }
 
     public int getSensorIcon() {

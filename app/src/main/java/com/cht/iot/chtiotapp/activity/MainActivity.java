@@ -5,9 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-//import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-//import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -26,20 +24,23 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-
 import com.cht.iot.chtiotapp.R;
+import com.cht.iot.chtiotapp.fragment.DevicesFragment;
 import com.cht.iot.chtiotapp.fragment.HomeFragment;
 import com.cht.iot.chtiotapp.fragment.RegistryFragment;
-import com.cht.iot.chtiotapp.fragment.DevicesFragment;
 import com.cht.iot.chtiotapp.fragment.SensorFragment;
 import com.cht.iot.chtiotapp.fragment.SettingsFragment;
 import com.cht.iot.chtiotapp.other.CircleTransform;
+import com.cht.iot.chtiotapp.other.SensorAdapter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+
+//import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.Snackbar;
 
 public class MainActivity extends AppCompatActivity implements SensorFragment.OnFragmentInteractionListener{
 
@@ -455,6 +456,8 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        //Log.e("onActivityResult", requestCode + ", " + resultCode );
+
         if(requestCode == resultCode) {
             apiKey = data.getStringExtra("apikey");
 
@@ -463,6 +466,39 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
             //editor.apply();
             editor.commit();
         }
+
+        if(requestCode == SensorAdapter.REQUEST_TAKE_PHOTO && resultCode == RESULT_OK)
+        {
+            Log.e("MainActivity ", "onActivityResult");
+
+            if(data == null)
+            {
+                Log.e("FUK", "FUK");
+            }
+
+
+            /*
+            Uri uri = data.getParcelableExtra(MediaStore.EXTRA_OUTPUT);
+            Log.e("Intent ", uri.toString());
+            Log.e("MainActivity ", "onActivityResult");
+
+            Bundle extras = new Bundle();
+            extras.putString(DEVICE_NAME, now_Device_Name);
+            extras.putString(DEVICE_DESC, now_Device_Desc);
+            extras.putString(DEVICE_ID, now_Device_ID);
+
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+
+            SensorFragment sf = new SensorFragment();
+            sf.setArguments(extras);
+
+            ft.replace(R.id.frame,  sf, MainActivity.TAG_DEVICES);
+            ft.addToBackStack(null);
+            ft.commit();
+            */
+        }
+
 
         needRefresh = true;
 

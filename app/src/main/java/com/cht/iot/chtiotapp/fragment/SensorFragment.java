@@ -2,10 +2,13 @@ package com.cht.iot.chtiotapp.fragment;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,10 +29,17 @@ import com.cht.iot.persistence.entity.api.ISensor;
 import com.cht.iot.persistence.entity.data.Rawdata;
 import com.cht.iot.service.api.OpenRESTfulClient;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.app.Activity.RESULT_OK;
+import static com.cht.iot.chtiotapp.fragment.DevicesFragment.DEVICE_DESC;
+import static com.cht.iot.chtiotapp.fragment.DevicesFragment.DEVICE_ID;
+import static com.cht.iot.chtiotapp.fragment.DevicesFragment.DEVICE_NAME;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,6 +55,11 @@ public class SensorFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    @Override
+    public void onAttachFragment(Fragment childFragment) {
+        super.onAttachFragment(childFragment);
+    }
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -54,12 +69,15 @@ public class SensorFragment extends Fragment {
     private String device_id;
 
     private String ApiKey;
+    private ISensor[] sensors;
 
     //create a instance of RecycleView
     private RecyclerView recyclerView;
     private SensorAdapter adapter;
     private View view;
     private Context context;
+
+    public static int POST_ITEM = 0;
 
     private List<SensorItem> listData;
 
@@ -103,9 +121,9 @@ public class SensorFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         //Get the device information to set SensorFragment up
-        device_name = getArguments().getString(DevicesFragment.DEVICE_NAME);
-        device_desc = getArguments().getString(DevicesFragment.DEVICE_DESC);
-        device_id = getArguments().getString(DevicesFragment.DEVICE_ID);
+        device_name = getArguments().getString(DEVICE_NAME);
+        device_desc = getArguments().getString(DEVICE_DESC);
+        device_id = getArguments().getString(DEVICE_ID);
 
         //Log.e("DEVICES information", device_name + ",  " + device_desc + ", " + device_id);
 
@@ -154,10 +172,48 @@ public class SensorFragment extends Fragment {
         mListener = null;
     }
 
+
+    // SensorAdapter中取得SensorFragment的實例，並呼叫startActivityForResult
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Log.e("SensorFragment", requestCode + ", " + resultCode);
+
+        if(requestCode == SensorAdapter.REQUEST_TAKE_PHOTO && resultCode == RESULT_OK)
+        {
+            Log.e("SensorFragment ", "onActivityResult");
+
+            Bitmap mImageBitmap;
+
+            try {
+                //取得內建相機所拍的檔案 礙於原尺寸高解析度 使上下載速度變慢
+                mImageBitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), Uri.parse(SensorAdapter.PHOTO_PATH));
+
+                // 方法(一) 簡單的Bitmap
+                //Bundle extras = data.getExtras();
+                //mImageBitmap = (Bitmap) extras.get("data");
+
+                //複雜的檔案轉換
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                mImageBitmap.compress((Bitmap.CompressFormat.PNG), 0, bos);
+                byte[] bytes = bos.toByteArray();
+                SensorAdapter.IMAGE_BODY = new ByteArrayInputStream(bytes);
+
+                //傳送圖片資料
+                adapter.new SendInfoTask(POST_ITEM).execute();
+
+                Log.e("BITMAP", "PHOTO OK");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     /*  AsyncTask enables proper and easy use of the UI thread.
-        This class allows you to perform background operations and publish results
-        on the UI thread without having to manipulate threads and/or handlers.
-    */
+            This class allows you to perform background operations and publish results
+            on the UI thread without having to manipulate threads and/or handlers.
+        */
     private class GetSensorsInfoTask extends AsyncTask<String, Integer, String>
     {
         //ProgressDialog instance
@@ -190,7 +246,7 @@ public class SensorFragment extends Fragment {
 
             try {
 
-                ISensor[] sensors = client.getSensors(device_id);
+                sensors = client.getSensors(device_id);
 
                 int length = sensors.length;
                 float max = (float)length;
@@ -202,17 +258,20 @@ public class SensorFragment extends Fragment {
 
                         SensorItem item = new SensorItem();
 
+                        // Give device_id & sensor_id to get the Rawdata
                         Rawdata rawdata = client.getRawdata(device_id, sensors[i].getId());
 
+                        // Convert rawdata to String Array to use
                         String[] str_RawData = rawdata.getValue();
 
+                        // If data have not initialize, we should give it a default value.
                         if(str_RawData.length == 0)
                         {
                             str_RawData = new String[1];
                             str_RawData[0] = "NO RAWDATA IN THIS SENSOR!";
                         }
 
-                        item.setSenserName(sensors[i].getName());
+                        item.setSensorName(sensors[i].getName());
 
                         String type = sensors[i].getType();
 
@@ -263,13 +322,13 @@ public class SensorFragment extends Fragment {
                             item.setType(SensorItem.BUTTON);
                         }
 
-
-                        Log.e("SENSOR => " , "sensor " + i);
-                        Log.e("SENSOR TYPE => ",sensors[i].getType());
-                        Log.e("SENSOR Name => ", sensors[i].getName());
-                        Log.e("SENSOR Value => ", str_RawData[0]);
-                        Log.e("SENSOR", "-------------------------------");
-
+                        /*
+                            Log.e("SENSOR => " , "sensor " + i);
+                            Log.e("SENSOR TYPE => ",sensors[i].getType());
+                            Log.e("SENSOR Name => ", sensors[i].getName());
+                            Log.e("SENSOR Value => ", str_RawData[0]);
+                            Log.e("SENSOR", "-------------------------------");
+                        */
 
                         listData.add(item);
 
@@ -302,7 +361,7 @@ public class SensorFragment extends Fragment {
             progressBar.dismiss();
 
             //ensure the devices data capture is finished so that we can send data to adapter
-            adapter = new SensorAdapter(listData, context);
+            adapter = new SensorAdapter(SensorFragment.this ,listData, context, device_id, sensors);
 
             recyclerView.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
 
@@ -327,4 +386,6 @@ public class SensorFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }

@@ -44,6 +44,10 @@ public class DevicesFragment extends Fragment implements DeviceAdapter.ItemClick
     public static final String DEVICE_DESC = "DEVICE_DESC";
     public static final String DEVICE_ID = "DEVICE_ID";
 
+    public static String now_Device_Name;
+    public static String now_Device_Desc;
+    public static String now_Device_ID;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -111,10 +115,13 @@ public class DevicesFragment extends Fragment implements DeviceAdapter.ItemClick
     public void onItemClick(int p) {
 
         DeviceItem item = listData.get(p);
+        now_Device_Name = item.getDeviceName();
+        now_Device_Desc = item.getDeviceDesc();
+        now_Device_ID = item.getDeviceId();
         Bundle extras = new Bundle();
-        extras.putString(DEVICE_NAME, item.getDeviceName());
-        extras.putString(DEVICE_DESC, item.getDeviceDesc());
-        extras.putString(DEVICE_ID, item.getDeviceId());
+        extras.putString(DEVICE_NAME, now_Device_Name);
+        extras.putString(DEVICE_DESC, now_Device_Desc);
+        extras.putString(DEVICE_ID, now_Device_ID);
 
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
