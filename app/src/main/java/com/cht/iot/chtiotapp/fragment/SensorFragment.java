@@ -8,7 +8,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -186,27 +185,38 @@ public class SensorFragment extends Fragment {
 
             Bitmap mImageBitmap;
 
+            // 方法(一) 簡單的Bitmap
+            Bundle extras = data.getExtras();
+            mImageBitmap = (Bitmap) extras.get("data");
+
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            mImageBitmap.compress((Bitmap.CompressFormat.PNG), 0, bos);
+            byte[] bytes = bos.toByteArray();
+            SensorAdapter.IMAGE_BODY = new ByteArrayInputStream(bytes);
+
+            adapter.new SendInfoTask(POST_ITEM).execute();
+            Log.e("BITMAP", "PHOTO OK");
+
+            /* 方法(二) 取得內建相機所拍的檔案 礙於原尺寸高解析度 使上下載速度變慢
+
             try {
-                //取得內建相機所拍的檔案 礙於原尺寸高解析度 使上下載速度變慢
                 mImageBitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), Uri.parse(SensorAdapter.PHOTO_PATH));
 
-                // 方法(一) 簡單的Bitmap
-                //Bundle extras = data.getExtras();
-                //mImageBitmap = (Bitmap) extras.get("data");
-
-                //複雜的檔案轉換
+                // 複雜的檔案轉換 設定最重要的ImageBody
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 mImageBitmap.compress((Bitmap.CompressFormat.PNG), 0, bos);
                 byte[] bytes = bos.toByteArray();
                 SensorAdapter.IMAGE_BODY = new ByteArrayInputStream(bytes);
 
-                //傳送圖片資料
+                // 進行圖片資料的上傳
                 adapter.new SendInfoTask(POST_ITEM).execute();
 
                 Log.e("BITMAP", "PHOTO OK");
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            */
         }
     }
 
@@ -302,7 +312,6 @@ public class SensorFragment extends Fragment {
 
                             InputStream inputStream = client.getSnapshotBody(device_id, sensors[i].getId());
                             item.setSensorImageBtn(BitmapFactory.decodeStream(inputStream));
-
                         }
                         else if(type.equalsIgnoreCase("counter"))
                         {

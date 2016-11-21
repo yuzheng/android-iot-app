@@ -165,13 +165,14 @@ public class SensorAdapter extends RecyclerView.Adapter<SensorAdapter.SensorHold
                 @Override
                 public void onClick(View v) {
 
-                    // 方法(一) 呼叫startActivityForResult尋找可處理拍照意圖的Activity
-                    SensorFragment.POST_ITEM = now_Position;
-                    dispatchTakePictureIntent();
+                    // 方法(一) 複雜拍照 呼叫startActivityForResult尋找可處理拍照意圖的Activity
+                    // SensorFragment.POST_ITEM = now_Position;
+                    // dispatchTakePictureIntent();
 
                     // 方法(二) 簡易拍照 並回傳Bitmap於onActivityResult的extra預設key=data
-                    // Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                    // fragment.startActivityForResult(intent, REQUEST_TAKE_PHOTO);
+                     SensorFragment.POST_ITEM = now_Position;
+                     Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                     fragment.startActivityForResult(intent, REQUEST_TAKE_PHOTO);
                 }
             });
 
@@ -347,7 +348,7 @@ public class SensorAdapter extends RecyclerView.Adapter<SensorAdapter.SensorHold
         }
     }
 
-    //
+    //方法(一) 複雜拍照(高解析度) 定義照片存放路徑
     private File createImageFile() throws IOException {
 
         // 照片 欲存放之目錄路徑
@@ -369,7 +370,7 @@ public class SensorAdapter extends RecyclerView.Adapter<SensorAdapter.SensorHold
         return image;
     }
 
-    //執行拍照
+    //方法(一) 複雜拍照(高解析度) 開啟Activity來處理拍照意圖
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
@@ -385,10 +386,12 @@ public class SensorAdapter extends RecyclerView.Adapter<SensorAdapter.SensorHold
             }
 
             if (photoFile != null) {
+
                 Uri photoURI = FileProvider.getUriForFile(context,
                         "com.example.android.fileprovider",
                         photoFile);
 
+                // 拍照並儲存至指定的路徑
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
 
                 // 提高到Activity層級去執行startActivityForResult
