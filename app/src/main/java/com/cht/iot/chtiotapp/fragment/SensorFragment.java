@@ -36,9 +36,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
-import static com.cht.iot.chtiotapp.fragment.DevicesFragment.DEVICE_DESC;
-import static com.cht.iot.chtiotapp.fragment.DevicesFragment.DEVICE_ID;
-import static com.cht.iot.chtiotapp.fragment.DevicesFragment.DEVICE_NAME;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,6 +44,9 @@ import static com.cht.iot.chtiotapp.fragment.DevicesFragment.DEVICE_NAME;
  * to handle interaction events.
  * Use the {@link SensorFragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ *  SensorFragment 是用來呈現 Sensor 的清單列表
+ *
  */
 public class SensorFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -62,23 +62,6 @@ public class SensorFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-    private String device_name;
-    private String device_desc;
-    private String device_id;
-
-    private String ApiKey;
-    private ISensor[] sensors;
-
-    //create a instance of RecycleView
-    private RecyclerView recyclerView;
-    private SensorAdapter adapter;
-    private View view;
-    private Context context;
-
-    public static int POST_ITEM = 0;
-
-    private List<SensorItem> listData;
 
     private OnFragmentInteractionListener mListener;
 
@@ -104,47 +87,19 @@ public class SensorFragment extends Fragment {
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-        listData = new ArrayList<>();
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        //Get the device information to set SensorFragment up
-        device_name = getArguments().getString(DEVICE_NAME);
-        device_desc = getArguments().getString(DEVICE_DESC);
-        device_id = getArguments().getString(DEVICE_ID);
-
-        //Log.e("DEVICES information", device_name + ",  " + device_desc + ", " + device_id);
-
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_sensor, container, false);
-        context = view.getContext();
-
-        //start the GetSensorInfoTask to trigger RESTful connection to get the all sensors information to show on RecycleView
-        new SensorFragment.GetSensorsInfoTask().execute();
-
-        return view;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        TextView tv_Name = (TextView) getView().findViewById(R.id.tv_Name);
-        TextView tv_Desc = (TextView) getView().findViewById(R.id.tv_Desc);
-
-        tv_Name.setText(device_name);
-        tv_Desc.setText(device_desc);
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -171,6 +126,74 @@ public class SensorFragment extends Fragment {
         mListener = null;
     }
 
+    /**
+     *   以上Code都為Fragment預設或自動所產生...
+     */
+
+    // SensorFragment會承接從DeviceFragment傳來的Device資訊，故用以下變數儲存
+    private String device_name;
+    private String device_desc;
+    private String device_id;
+
+    // 對IoT平台進行連線請求，會需要前一個畫面(MainActivity)登入成功後的API Key
+    private String ApiKey;
+    private ISensor[] sensors;
+
+    private RecyclerView recyclerView;      // 官方推薦使用的高效能清單View(取代以往的ListView)
+    private SensorAdapter adapter;          // 轉接器，負責將資料配置給recycleView
+    private View view;                      // 用來代表RecycleView上的單一列
+    private Context context;                // 獲取MainActivity的Context參照，以利許多Function呼叫
+
+    public static int POST_ITEM = 0;
+
+    private List<SensorItem> list_SensorItem;      //List of SensorItem 用來存放從IoT平台網頁上該Device底下的所有Sensor資訊
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+
+        // 初始化 List of SensorItem
+        list_SensorItem = new ArrayList<>();
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        // 獲取被使用者點擊的device相關資訊 (由DevicesFragment中透過setArguments所傳入的參數)
+        device_name = getArguments().getString(DevicesFragment.DEVICE_NAME);
+        device_desc = getArguments().getString(DevicesFragment.DEVICE_DESC);
+        device_id = getArguments().getString(DevicesFragment.DEVICE_ID);
+
+        Log.e("[SensorFragment]設備資訊 ", "(1)名稱:" + device_name + ", (2)描述:" + device_desc + ", (3)ID:" + device_id);
+
+        // 將fragment_sensor的xml面版Layout，轉成View類別，且當成子物件黏至container上
+        view = inflater.inflate(R.layout.fragment_sensor, container, false);
+
+        // 獲取MainActivity的Context參照，以利許多Function呼叫
+        context = view.getContext();
+
+        // 執行GetSensorsInfoTask異步任務建立App與IoT平台之RESTful連線
+        // 並獲取Device底下所有的Sensor資訊，再呈現於RecycleView上
+        new SensorFragment.GetSensorsInfoTask().execute();
+
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        // 設置fragment_sensor.xml上的設備名稱與描述
+        TextView tv_Name = (TextView) getView().findViewById(R.id.tv_Name);
+        TextView tv_Desc = (TextView) getView().findViewById(R.id.tv_Desc);
+        tv_Name.setText(device_name);
+        tv_Desc.setText(device_desc);
+    }
 
     // SensorAdapter中取得SensorFragment的實例，並呼叫startActivityForResult
     @Override
@@ -339,7 +362,7 @@ public class SensorFragment extends Fragment {
                             Log.e("SENSOR", "-------------------------------");
                         */
 
-                        listData.add(item);
+                        list_SensorItem.add(item);
 
                         //Update the progress bar
                         progress = Math.round(i/max) * 100;
@@ -370,31 +393,12 @@ public class SensorFragment extends Fragment {
             progressBar.dismiss();
 
             //ensure the devices data capture is finished so that we can send data to adapter
-            adapter = new SensorAdapter(SensorFragment.this ,listData, context, device_id, sensors);
+            adapter = new SensorAdapter(SensorFragment.this , list_SensorItem, context, device_id, sensors);
 
             recyclerView.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
 
             recyclerView.setAdapter(adapter);
             //adapter.setItemClickCallBack(SensorFragment.this);
         }
-
     }
-
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
-
-
 }

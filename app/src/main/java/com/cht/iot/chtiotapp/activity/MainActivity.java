@@ -483,9 +483,9 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
             Log.e("MainActivity ", "onActivityResult");
 
             Bundle extras = new Bundle();
-            extras.putString(DEVICE_NAME, now_Device_Name);
-            extras.putString(DEVICE_DESC, now_Device_Desc);
-            extras.putString(DEVICE_ID, now_Device_ID);
+            extras.putString(DEVICE_NAME, selected_Device_Name);
+            extras.putString(DEVICE_DESC, selected_Device_Desc);
+            extras.putString(DEVICE_ID, selected_Device_ID);
 
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
