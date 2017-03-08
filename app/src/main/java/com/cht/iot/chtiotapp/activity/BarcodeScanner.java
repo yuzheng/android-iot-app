@@ -3,6 +3,7 @@ package com.cht.iot.chtiotapp.activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,13 +15,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.cht.iot.chtiotapp.R;
+
 import net.sourceforge.zbar.Config;
 import net.sourceforge.zbar.Image;
 import net.sourceforge.zbar.ImageScanner;
 import net.sourceforge.zbar.Symbol;
 import net.sourceforge.zbar.SymbolSet;
-
-import com.cht.iot.chtiotapp.R;
 
 /**
  * Created by kvprasad on 10/3/2015.
@@ -162,7 +163,7 @@ public class BarcodeScanner extends AppCompatActivity {
 
     private void showAlertDialog(final String message) {
 
-        new AlertDialog.Builder(this)
+        AlertDialog build = new AlertDialog.Builder(this)
                 .setTitle(getResources().getString(R.string.app_name))
                 .setCancelable(false)
                 .setMessage(message)
@@ -182,6 +183,8 @@ public class BarcodeScanner extends AppCompatActivity {
                 })
 
                 .show();
+
+        build.getButton(build.BUTTON_POSITIVE).setTextColor(Color.BLUE);
     }
 
 }
