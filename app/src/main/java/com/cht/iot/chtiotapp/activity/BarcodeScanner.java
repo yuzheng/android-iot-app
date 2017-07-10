@@ -163,6 +163,8 @@ public class BarcodeScanner extends AppCompatActivity {
 
     private void showAlertDialog(final String message) {
 
+
+
         AlertDialog build = new AlertDialog.Builder(this)
                 .setTitle(getResources().getString(R.string.app_name))
                 .setCancelable(false)
@@ -170,10 +172,19 @@ public class BarcodeScanner extends AppCompatActivity {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
+                        boolean  isRegistry = false;
+                        if(message.indexOf("sn:")==0){
+                            isRegistry = true;
+                        }
 
                         Intent intent = new Intent();
-                        intent.putExtra("apikey", message);
-                        setResult(1394, intent);
+                        if(isRegistry){
+                            intent.putExtra("registry", message);
+                            setResult(1943, intent);
+                        }else {
+                            intent.putExtra("apikey", message);
+                            setResult(1394, intent);
+                        }
 
                         mCamera.release();
                         mCamera = null;

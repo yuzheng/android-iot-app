@@ -10,4 +10,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cht.iot.chtiotapp.activity.AboutUsActivity">
 
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:text="行政院環境保護署物聯網平臺，致力提供智慧環境感測資訊網加值服務，連結都市建設等公共設施網絡，利用感測資料之收集、處理、儲存、供應及管理等，建構高可用性、高可靠性、高處理量且符合資訊安全標準的智慧環境感測資料中心；而透過物聯網技術收納各項裝置資訊以進行監測，彌補以往資訊缺口的困境，期許能透過平臺解決如下之環境汙染議題: (1)空氣品質、(2)水質、(3)噪音與其他類。" />
+
+    <Button
+        android:id="@+id/morebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView9"
+        android:layout_alignStart="@+id/textView9"
+        android:layout_below="@+id/textView9"
+        android:layout_marginTop="26dp"
+        android:text="更多資訊" />
 </RelativeLayout>

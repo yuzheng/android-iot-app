@@ -1,8 +1,13 @@
 package com.cht.iot.chtiotapp.activity;
 
+import android.Manifest;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
@@ -13,6 +18,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -31,7 +38,13 @@ import com.cht.iot.chtiotapp.fragment.RegistryFragment;
 import com.cht.iot.chtiotapp.fragment.SensorFragment;
 import com.cht.iot.chtiotapp.fragment.SettingsFragment;
 import com.cht.iot.chtiotapp.other.CircleTransform;
+import com.cht.iot.chtiotapp.other.DeviceAdapter;
+import com.cht.iot.chtiotapp.other.DeviceItem;
+import com.cht.iot.chtiotapp.other.DividerItemDecoration;
+import com.cht.iot.chtiotapp.other.RESTful;
 import com.cht.iot.chtiotapp.other.SensorAdapter;
+import com.cht.iot.persistence.entity.api.IDevice;
+import com.cht.iot.service.api.OpenRESTfulClient;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,10 +52,14 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
+// Android 6 need
+import android.support.v4.app.ActivityCompat;
+import static android.Manifest.permission.*;
+
 //import android.support.design.widget.FloatingActionButton;
 //import android.support.design.widget.Snackbar;
 
-public class MainActivity extends AppCompatActivity implements SensorFragment.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements SensorFragment.OnFragmentInteractionListener, DevicesFragment.OnFragmentInteractionListener{
 
     private String APP_TAG;
 
@@ -57,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
     // urls to load navigation header background image
     // and profile image
     private static final String urlNavHeaderBg = "http://api.androidhive.info/images/nav-menu-header-bg.jpg";
-    private static final String urlProfileImg = "https://iot.cht.com.tw/iot/resources/iot/img/logo.png";
+    private static final String urlProfileImg = "https://iot.epa.gov.tw/iot/resources/iot/img/logo.png";
 
     // index to identify current nav menu item
     public static int navItemIndex = 0;
@@ -84,6 +101,8 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
 
     private SharedPreferences prefs;
 
+    private Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +112,8 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
         setSupportActionBar(toolbar);
 
         mHandler = new Handler();
+
+        context = this;
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -144,7 +165,12 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
             CURRENT_TAG = TAG_HOME;
             loadChosenFragment();
         }
+
+
+
     }
+
+
 
     private String loadJSONConfig(){
         String json = null;
@@ -169,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
      */
     private void loadNavHeader() {
         // name, website
-        txtName.setText("Cht IoT");
+        txtName.setText("CHT IoT Android APP");
         txtWebsite.setText("iot.cht.com.tw");
 
         // loading header background image
@@ -205,6 +231,7 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
         // if user select the current navigation menu again, don't do anything
         // just close the navigation drawer
         Log.v("IoTApp","current_tag:"+CURRENT_TAG+", ("+getSupportFragmentManager().findFragmentByTag(CURRENT_TAG)+")");
+        /*
         if (getSupportFragmentManager().findFragmentByTag(CURRENT_TAG) != null && !needRefresh) {
             drawer.closeDrawers();
             Log.v("IoTApp","don't do anything");
@@ -212,10 +239,10 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
             //toggleFab();
             return;
         }
-
+    */
         // set refresh false
         if(needRefresh) needRefresh = false;
-
+        Log.v("IoTApp","ccc");
         // Sometimes, when fragment has huge data, screen seems hanging
         // when switching between navigation menus
         // So using runnable, the fragment is loaded with cross fade effect
@@ -252,6 +279,7 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
     // get the Fragment which is chosen by user
     // if not Fragment is chosen, then return home fragment to root container (app_bar_main.xml => R.id.frame)
     private Fragment getChosenFragment() {
+        Log.v("iotapp","getChosenFragment:"+navItemIndex);
         switch (navItemIndex) {
             case 0:
                 if(!apiKey.isEmpty()) {
@@ -315,11 +343,13 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
                         startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
                         drawer.closeDrawers();
                         return true;
+    /*
                     case R.id.nav_privacy_policy:
                         // launch new intent instead of loading fragment
                         startActivity(new Intent(MainActivity.this, PrivacyPolicyActivity.class));
                         drawer.closeDrawers();
                         return true;
+    */
                     default:
                         navItemIndex = 0;
                 }
@@ -365,17 +395,31 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
     public void onBackPressed() {
 
         FragmentManager fm = this.getSupportFragmentManager();
+        Fragment currentFrag =  fm.findFragmentById(R.id.frame);
+        Log.v("iotapp",currentFrag.getClass().getSimpleName());
 
-        Log.e("BACK", "BACK BACK");
+        Log.v("iotapp", "BACK :"+fm.getBackStackEntryCount());
 
-        if(fm.getBackStackEntryCount() == 0)
-        {
-            //this.finish();
+        if(fm.getBackStackEntryCount() == 0) {
+            Log.v("iotapp", "finish app");
+            this.finish();
             //Log.d("STACK", "MainActivity => STACK ZERO COUNT");
         }
         else
         {
+            //Log.v("iotapp", "pop back");
             //fm.popBackStack();
+            if(currentFrag.getClass().equals(HomeFragment.class) || currentFrag.getClass().equals(SettingsFragment.class)){
+                Log.v("iotapp", "finish app");
+                this.finish();
+            }else if(currentFrag.getClass().equals(DevicesFragment.class) || currentFrag.getClass().equals(RegistryFragment.class)){
+                fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                navItemIndex = 0;
+                CURRENT_TAG = TAG_HOME;
+                loadChosenFragment();
+                return;
+            }
+
             //Log.d("STACK", "MainActivity => Fragment popBackStack");
         }
 
@@ -389,16 +433,24 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
         if (shouldLoadHomeFragOnBackPress) {
             // checking if user is on other navigation menu
             // rather than home
+            /*
             if (navItemIndex != 0) {
                 navItemIndex = 0;
                 CURRENT_TAG = TAG_HOME;
                 loadChosenFragment();
                 return;
             }
+            */
         }
 
         super.onBackPressed();
     }
+
+    public void setNavItemIndex(int index){
+        navItemIndex = index;
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -456,15 +508,41 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        //Log.e("onActivityResult", requestCode + ", " + resultCode );
+        Log.e("onActivityResult", requestCode + ", " + resultCode );
 
         if(requestCode == resultCode) {
-            apiKey = data.getStringExtra("apikey");
+            if(requestCode == 1394) {
+                apiKey = data.getStringExtra("apikey");
 
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString("key",apiKey);
-            //editor.apply();
-            editor.commit();
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("key", apiKey);
+                //editor.apply();
+                editor.commit();
+            }else if(requestCode == 1943) {
+
+                navItemIndex = 0;
+                CURRENT_TAG = TAG_HOME;
+                loadChosenFragment();
+
+                Toast.makeText(getApplicationContext(), data.getStringExtra("registry"), Toast.LENGTH_LONG).show();
+                String[] registryData = data.getStringExtra("registry").split(";");
+                String sn = null;
+                String digest = null;
+                if(registryData.length == 2){
+                    if(registryData[0].startsWith("sn:")){
+                        sn = registryData[0].replace("sn:","");
+                    }
+
+                    if(registryData[1].startsWith("digest:")){
+                        digest = registryData[1].replace("digest:","");
+                    }
+                }
+
+                if(sn!=null && digest != null){
+                    new RegistryDeviceTask().execute(sn, digest);
+                }
+
+            }
         }
 
         if(requestCode == SensorAdapter.REQUEST_TAKE_PHOTO && resultCode == RESULT_OK)
@@ -527,6 +605,97 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+
+    /**
+     *  AsyncTask特色
+     *       此類別可適當並簡易的操作UI thread，主要提供背景執行作業(non-UI thread)來完成某任務，
+     *       且可以將結果返回至UI thread，而不用操作麻煩的thread或是handler技巧
+     *
+     *  PS:
+     *      如果您預期要執行的工作能在幾秒內完成，就可以選擇使用 AsyncTask，
+     *      若執行的時間很長，Android則強烈建議採用: Executor, ThreadPoolExecutor & FutureTask。
+     *
+     *      [參數說明]
+     *      1. Params -- 要執行doInBackground() 時傳入的參數，數量可以不止一個
+     *      2. Progress -- doInBackground() 執行過程中回傳給 onProgressUpdate()，數量可以不止一個
+     *      3. Result -- 傳回執行結果 onPostExecute()，若您沒有參數要傳入，則填入 Void (注意 V 為大寫)
+     *
+     *      GetDevicesInfoTask之目的即為:
+     *      向IoT平台發出RESTful連線，並要求取得專案下所有Device資訊，呈現於RecycleView之上(可視為新型ListView)
+     */
+
+    private class RegistryDeviceTask extends AsyncTask<String, Integer, String>
+    {
+        // 獲得Device資訊可能需要一些時間，故用ProgressDialog進度條來告知使用者目前載入狀況
+        private ProgressDialog progressBar;
+
+        @Override
+        // Task事前準備工作
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            // 設定ProgressDialog
+            progressBar = new ProgressDialog(context);
+            progressBar.setMessage("讀取中...");
+            progressBar.setCancelable(false);
+            progressBar.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progressBar.show();
+        }
+
+        @Override
+        // 開始背景執行某項較費時的任務(non-UI Thread)
+        protected String doInBackground(String... params) {
+
+
+            String sn = params[0];
+            String digest = params[1];
+
+            Log.i("iotapp", "RegistryDeviceTask doInBackground:"+sn+","+digest);
+            // OpenRESTfulClient物件
+            OpenRESTfulClient client = new OpenRESTfulClient(RESTful.HOST, RESTful.PORT, getApiKey());
+
+
+            try {
+                client.reconfigure(sn, digest);
+                /*
+                {
+                  "op": "Reconfigure",
+                  "ck": "DKXWPBWWXBAAUE7A3Z",
+                  "deviceId": "2207430052"
+                }
+
+                 */
+
+            }
+            catch (IOException o)
+            {
+                o.printStackTrace();
+            }
+
+            return null;
+        }
+
+        // 用來顯示進度
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            progressBar.setProgress(values[0]);
+        }
+
+        // 執行完的結果，第三個參數 [Result] 會被傳入此方法，此處為UI-Thread(代表可以操作recycleView...)
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            // 進度已完成，故取消ProgressBar
+            progressBar.dismiss();
+
+            Toast.makeText(getApplicationContext(), "完成設備納管，請至我的設備查看！", Toast.LENGTH_LONG).show();
+
+        }
+    }
+
 
 
 }

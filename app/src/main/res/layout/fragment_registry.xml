@@ -4,11 +4,23 @@
     android:layout_height="match_parent"
     tools:context="com.cht.iot.chtiotapp.fragment.RegistryFragment">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:alpha="0.3"
-        android:src="@drawable/ic_local_movies_black_24dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
+        <TextView
+            android:text="設備納管可以透過掃描 QRCode 或手動輸入(流水號和簽章)讓終端設備能透過 MQTT 機制獲取 IoT KEY，以完成後續終端設備能自動化建立設備(取得設備編號)與感測器資訊。"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6" />
+        <Button
+            android:text="設備納管"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/registryDeviceButton" />
+    </LinearLayout>
 
 </FrameLayout>

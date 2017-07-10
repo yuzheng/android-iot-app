@@ -137,6 +137,7 @@ public class DevicesFragment extends Fragment implements DeviceAdapter.ItemClick
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -312,4 +313,5 @@ public class DevicesFragment extends Fragment implements DeviceAdapter.ItemClick
             adapter.setItemClickCallBack(DevicesFragment.this);
         }
     }
+
 }

@@ -9,4 +9,5 @@ public class RESTful {
     public static final String HOST = "iot.cht.com.tw";
     public static final int PORT = 80;
 
+
 }

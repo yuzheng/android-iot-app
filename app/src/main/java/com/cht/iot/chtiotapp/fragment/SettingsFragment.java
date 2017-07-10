@@ -1,9 +1,12 @@
 package com.cht.iot.chtiotapp.fragment;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
@@ -16,6 +19,8 @@ import android.widget.TextView;
 
 import com.cht.iot.chtiotapp.R;
 import com.cht.iot.chtiotapp.activity.BarcodeScanner;
+
+import static android.Manifest.permission.CAMERA;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +35,8 @@ public class SettingsFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private static final int REQUEST_CAMERA = 8881;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -94,11 +101,38 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), BarcodeScanner.class);
-                getActivity().startActivityForResult(intent, 1394);
+                int permission = ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA);
+                if (permission != PackageManager.PERMISSION_GRANTED) {
+                    //未取得權限，向使用者要求允許權限
+                    ActivityCompat.requestPermissions(getActivity(),
+                            new String[] {CAMERA},
+                            REQUEST_CAMERA
+                    );
+                }else {
+                    //已有權限，可進行檔案存取
+                    Intent intent = new Intent(v.getContext(), BarcodeScanner.class);
+                    getActivity().startActivityForResult(intent, 1394);
+                }
+
                 //startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch(requestCode) {
+            case REQUEST_CAMERA:
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //取得權限，進行檔案存取
+                    Intent intent = new Intent(getActivity(), BarcodeScanner.class);
+                    getActivity().startActivityForResult(intent, 1394);
+                } else {
+                    //使用者拒絕權限，停用檔案存取功能
+                }
+                return;
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event

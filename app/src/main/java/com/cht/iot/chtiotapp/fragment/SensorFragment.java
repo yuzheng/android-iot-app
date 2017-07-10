@@ -14,8 +14,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.cht.iot.chtiotapp.R;
@@ -62,6 +66,8 @@ public class SensorFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private TextView tv_UpdateTime;
 
     private OnFragmentInteractionListener mListener;
 
@@ -146,11 +152,13 @@ public class SensorFragment extends Fragment {
 
     public static int POST_ITEM = 0;
 
+
     private List<SensorItem> list_SensorItem;      //List of SensorItem 用來存放從IoT平台網頁上該Device底下的所有Sensor資訊
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -181,6 +189,7 @@ public class SensorFragment extends Fragment {
         // 並獲取Device底下所有的Sensor資訊，再呈現於RecycleView上
         new SensorFragment.GetSensorsInfoTask().execute();
 
+
         return view;
     }
 
@@ -193,6 +202,11 @@ public class SensorFragment extends Fragment {
         TextView tv_Desc = (TextView) getView().findViewById(R.id.tv_Desc);
         tv_Name.setText(device_name);
         tv_Desc.setText(device_desc);
+
+        // for 環保署
+        tv_UpdateTime = (TextView) getView().findViewById(R.id.updatetime);
+
+
     }
 
     // SensorAdapter中取得SensorFragment的實例，並呼叫startActivityForResult
@@ -243,6 +257,27 @@ public class SensorFragment extends Fragment {
         }
     }
 
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        // TODO Add your menu entries here
+        inflater.inflate(R.menu.sensor_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_rawdata_update:
+                new SensorFragment.GetSensorsInfoTask().execute();
+                break;
+
+        }
+        return true;
+
+    }
+
     /*  AsyncTask enables proper and easy use of the UI thread.
             This class allows you to perform background operations and publish results
             on the UI thread without having to manipulate threads and/or handlers.
@@ -281,21 +316,36 @@ public class SensorFragment extends Fragment {
 
                 sensors = client.getSensors(device_id);
 
+                // 先清空現有資料，以免於SensorFragment按下手動更新時，造成item重複新增於list之上
+                list_SensorItem.clear();
+
                 int length = sensors.length;
                 float max = (float)length;
                 int progress = 0;
 
                 if(length != 0)
                 {
+
                     for(int i = 0; i<length; i++) {
 
                         SensorItem item = new SensorItem();
 
                         // Give device_id & sensor_id to get the Rawdata
-                        Rawdata rawdata = client.getRawdata(device_id, sensors[i].getId());
+                        final Rawdata rawdata = client.getRawdata(device_id, sensors[i].getId());
 
                         // Convert rawdata to String Array to use
                         String[] str_RawData = rawdata.getValue();
+
+                        //for 環保署
+                        getActivity().runOnUiThread(new Runnable() {
+                            public void run() {
+                            if(rawdata!=null && rawdata.getTime()!=null) {
+                                tv_UpdateTime.setText(rawdata.getTime().toString());
+                            }
+                            }
+                        });
+
+
 
                         // If data have not initialize, we should give it a default value.
                         if(str_RawData.length == 0)

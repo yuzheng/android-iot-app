@@ -1,6 +1,7 @@
 package com.cht.iot.chtiotapp.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.cht.iot.chtiotapp.R;
+import com.cht.iot.chtiotapp.activity.BarcodeScanner;
 import com.cht.iot.chtiotapp.activity.MainActivity;
 
 /**
@@ -63,6 +65,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -87,8 +90,10 @@ public class HomeFragment extends Fragment {
         devicesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 fragmentTransaction.replace(R.id.frame, new DevicesFragment(), MainActivity.TAG_DEVICES);
                 fragmentTransaction.addToBackStack(null);
+                ((MainActivity)getActivity()).setNavItemIndex(1);
                 fragmentTransaction.commit();
             }
         });
@@ -98,8 +103,16 @@ public class HomeFragment extends Fragment {
         registryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 fragmentTransaction.replace(R.id.frame, new RegistryFragment(), MainActivity.TAG_REGISTRY);
-                fragmentTransaction.commitAllowingStateLoss();
+                fragmentTransaction.addToBackStack(null);
+                ((MainActivity)getActivity()).setNavItemIndex(2);
+                fragmentTransaction.commit();
+
+
+
+                //Intent intent = new Intent(v.getContext(), BarcodeScanner.class);
+                //getActivity().startActivityForResult(intent, 1943);
             }
         });
     }
@@ -113,7 +126,9 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onStart() {
+
         super.onStart();
+
     }
 
     @Override
@@ -126,6 +141,8 @@ public class HomeFragment extends Fragment {
 //                    + " must implement OnFragmentInteractionListener");
 //        }
     }
+
+
 
     @Override
     public void onDetach() {

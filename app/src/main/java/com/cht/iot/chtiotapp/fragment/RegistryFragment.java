@@ -1,14 +1,25 @@
 package com.cht.iot.chtiotapp.fragment;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.cht.iot.chtiotapp.R;
+import com.cht.iot.chtiotapp.activity.BarcodeScanner;
+import com.cht.iot.chtiotapp.activity.MainActivity;
+
+import static android.Manifest.permission.CAMERA;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,7 +39,14 @@ public class RegistryFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private static final int REQUEST_CAMERA = 8882;
+
     private OnFragmentInteractionListener mListener;
+
+    private View view;                      // 用來代表RecycleView上的單一列
+    private Context context;                // 獲取MainActivity的Context參照，以利許多Function呼叫
+
+    private Button registryButton;
 
     public RegistryFragment() {
         // Required empty public constructor
@@ -55,6 +73,7 @@ public class RegistryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -64,8 +83,57 @@ public class RegistryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_registry, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+
+
+        registryButton = (Button) getView().findViewById(R.id.registryDeviceButton);
+
+        registryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int permission = ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA);
+                if (permission != PackageManager.PERMISSION_GRANTED) {
+                    //未取得權限，向使用者要求允許權限
+                    ActivityCompat.requestPermissions(getActivity(),
+                            new String[] {CAMERA},
+                            REQUEST_CAMERA
+                    );
+                }else {
+                    //已有權限，可進行檔案存取
+                    Intent intent = new Intent(getActivity().getApplicationContext(), BarcodeScanner.class);
+                    getActivity().startActivityForResult(intent, 1943);
+                }
+
+            }
+        });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch(requestCode) {
+            case REQUEST_CAMERA:
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //取得權限，進行檔案存取
+                    Intent intent = new Intent(getActivity().getApplicationContext(), BarcodeScanner.class);
+                    getActivity().startActivityForResult(intent, 1943);
+                } else {
+                    //使用者拒絕權限，停用檔案存取功能
+                }
+                return;
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -74,6 +142,7 @@ public class RegistryFragment extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
+
 
     @Override
     public void onAttach(Context context) {
@@ -85,6 +154,7 @@ public class RegistryFragment extends Fragment {
 //                    + " must implement OnFragmentInteractionListener");
 //        }
     }
+
 
     @Override
     public void onDetach() {

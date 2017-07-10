@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ChtIoTApp</string>
+    <string name="app_name">CHT IoT</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -15,7 +15,7 @@
 
     <!-- Toolbar titles when navigation menu item is selected -->
     <string-array name="nav_item_activity_titles">
-        <item>Cht IoT App</item>
+        <item>CHT IoT App</item>
         <item>我的設備</item>
         <item>設備納管</item>
         <item>Notifications</item>
@@ -31,6 +31,7 @@
     <string name="about_us">About Us</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="scan_qrcode">Scan QR-Code</string>
+    <string name="menu_update">手動更新</string>
 
     <string name="iot_platform">IoT 服務平台</string>
 
