@@ -32,7 +32,6 @@
         android:layout_marginRight="15dp"
         android:scaleType="fitCenter"
         android:elevation="2dp"
-        android:background="?android:attr/textColorHintInverse"
         app:srcCompat="@mipmap/image_sensor" />
 
     <Button
