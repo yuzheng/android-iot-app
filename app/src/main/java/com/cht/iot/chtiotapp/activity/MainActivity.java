@@ -41,7 +41,7 @@ import com.cht.iot.chtiotapp.other.CircleTransform;
 import com.cht.iot.chtiotapp.other.DeviceAdapter;
 import com.cht.iot.chtiotapp.other.DeviceItem;
 import com.cht.iot.chtiotapp.other.DividerItemDecoration;
-import com.cht.iot.chtiotapp.other.RESTful;
+import com.cht.iot.chtiotapp.other.IoTServer;
 import com.cht.iot.chtiotapp.other.SensorAdapter;
 import com.cht.iot.persistence.entity.api.IDevice;
 import com.cht.iot.service.api.OpenRESTfulClient;
@@ -153,7 +153,6 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
             }
         }
 
-
         // load nav menu header data
         loadNavHeader();
 
@@ -165,12 +164,7 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
             CURRENT_TAG = TAG_HOME;
             loadChosenFragment();
         }
-
-
-
     }
-
-
 
     private String loadJSONConfig(){
         String json = null;
@@ -653,7 +647,7 @@ public class MainActivity extends AppCompatActivity implements SensorFragment.On
 
             Log.i("iotapp", "RegistryDeviceTask doInBackground:"+sn+","+digest);
             // OpenRESTfulClient物件
-            OpenRESTfulClient client = new OpenRESTfulClient(RESTful.HOST, RESTful.PORT, getApiKey());
+            OpenRESTfulClient client = new OpenRESTfulClient(IoTServer.RESTful_HOST, IoTServer.RESTful_PORT, getApiKey());
 
 
             try {

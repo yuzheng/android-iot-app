@@ -287,7 +287,7 @@ public class SensorAdapter extends RecyclerView.Adapter<SensorAdapter.SensorHold
         @Override
         protected String doInBackground(Integer... params) {
 
-            OpenRESTfulClient client = new OpenRESTfulClient(RESTful.HOST, RESTful.PORT, ApiKey);
+            OpenRESTfulClient client = new OpenRESTfulClient(IoTServer.RESTful_HOST, IoTServer.RESTful_PORT, ApiKey);
 
             ISensor sensor = sensors[device_Pos];
             String sensor_ID = sensors[device_Pos].getId();

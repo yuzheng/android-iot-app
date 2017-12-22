@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ import com.cht.iot.chtiotapp.activity.MainActivity;
 import com.cht.iot.chtiotapp.other.DeviceAdapter;
 import com.cht.iot.chtiotapp.other.DeviceItem;
 import com.cht.iot.chtiotapp.other.DividerItemDecoration;
-import com.cht.iot.chtiotapp.other.RESTful;
+import com.cht.iot.chtiotapp.other.IoTServer;
 import com.cht.iot.persistence.entity.api.IDevice;
 import com.cht.iot.service.api.OpenRESTfulClient;
 
@@ -249,7 +250,7 @@ public class DevicesFragment extends Fragment implements DeviceAdapter.ItemClick
         protected String doInBackground(String... params) {
 
             // OpenRESTfulClient物件
-            OpenRESTfulClient client = new OpenRESTfulClient(RESTful.HOST, RESTful.PORT, ApiKey);
+            OpenRESTfulClient client = new OpenRESTfulClient(IoTServer.RESTful_HOST, IoTServer.RESTful_PORT, ApiKey);
             // 先清空現有資料，以免於SensorFragment按下返回鍵時，造成item重複新增於list之上
             list_DeviceItem.clear();
 

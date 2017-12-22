@@ -25,11 +25,14 @@ import android.widget.TextView;
 import com.cht.iot.chtiotapp.R;
 import com.cht.iot.chtiotapp.activity.MainActivity;
 import com.cht.iot.chtiotapp.other.DividerItemDecoration;
-import com.cht.iot.chtiotapp.other.RESTful;
+import com.cht.iot.chtiotapp.other.IoTServer;
+import com.cht.iot.chtiotapp.other.IoTServer;
 import com.cht.iot.chtiotapp.other.SensorAdapter;
 import com.cht.iot.chtiotapp.other.SensorItem;
 import com.cht.iot.persistence.entity.api.ISensor;
+import com.cht.iot.persistence.entity.data.HeartBeat;
 import com.cht.iot.persistence.entity.data.Rawdata;
+import com.cht.iot.service.api.OpenMqttClient;
 import com.cht.iot.service.api.OpenRESTfulClient;
 
 import java.io.ByteArrayInputStream;
@@ -70,6 +73,9 @@ public class SensorFragment extends Fragment {
     private TextView tv_UpdateTime;
 
     private OnFragmentInteractionListener mListener;
+
+    // add mqtt
+    OpenMqttClient mqtt;
 
     public SensorFragment() {
         // Required empty public constructor
@@ -128,8 +134,12 @@ public class SensorFragment extends Fragment {
 
     @Override
     public void onDetach() {
-        super.onDetach();
         mListener = null;
+        if (mqtt != null) {
+            mqtt.stop();
+        }
+        super.onDetach();
+
     }
 
     /**
@@ -189,6 +199,15 @@ public class SensorFragment extends Fragment {
         // 並獲取Device底下所有的Sensor資訊，再呈現於RecycleView上
         new SensorFragment.GetSensorsInfoTask().execute();
 
+        // mqtt init part
+        mqtt = new OpenMqttClient(IoTServer.MQTT_HOST, IoTServer.MQTT_PORT, ApiKey);
+        mqtt.setListener(new OpenMqttClient.ListenerAdapter() {
+            @Override
+            public void onRawdata(String topic, Rawdata rawdata) {
+                onRawdataChanged(rawdata);
+            }
+        });
+        // mqtt int part
 
         return view;
     }
@@ -207,7 +226,72 @@ public class SensorFragment extends Fragment {
         tv_UpdateTime = (TextView) getView().findViewById(R.id.updatetime);
 
 
+
     }
+
+    /*
+    public void testMQTT(){
+        Log.i("iotapp", "testMQTT");
+        String host = "iot.cht.com.tw";
+        String deviceKeyA = "DKPWWEMFPGX7C2571M";
+        String deviceKeyB = "DKAEZE792XM93U9HWM";
+        String deviceA = "276664437";
+        String deviceB = "281494258";
+        String sensorA = "aaa";
+        String sensorB = "light";
+        OpenMqttClient mqcA = new OpenMqttClient(host, 8883, deviceKeyA, true);
+        mqcA.subscribe(deviceA, sensorA);
+        OpenMqttClient mqcB = new OpenMqttClient(host, 8883, deviceKeyB, true);
+        mqcB.subscribe(deviceB, sensorB);
+
+        mqcA.setListener(new OpenMqttClient.Listener() {
+            @Override
+            public void onRawdata(String topic, Rawdata rawdata) {
+                System.out.printf("Rawdata - deviceId: %s, id: %s, time: %s, value: %s\n", rawdata.getDeviceId(), rawdata.getId(), rawdata.getTime(), rawdata.getValue()[0]);
+            }
+
+            @Override
+            public void onHeartBeat(String topic, HeartBeat heartbeat) {
+                System.out.printf("HeartBeat - deviceId: %s, pulse: %s, from: %s, time: %s, type: %s\n", heartbeat.getDeviceId(), heartbeat.getPulse(), heartbeat.getFrom(), heartbeat.getTime(), heartbeat.getType());
+            }
+
+            @Override
+            public void onReconfigure(String topic, String apiKey) {
+                System.out.printf("Reconfigure - topic: %s, apiKey: %s\n", topic, apiKey);
+            }
+
+            @Override
+            public void onSetDeviceId(String topic, String apiKey, String deviceId) {
+                System.out.printf("SetDeviceId - topic: %s, apiKey: %s, deviceId: %s\n", topic, apiKey, deviceId);
+            }
+        });
+
+        mqcB.setListener(new OpenMqttClient.Listener() {
+            @Override
+            public void onRawdata(String topic, Rawdata rawdata) {
+                System.out.printf("Rawdata - deviceId: %s, id: %s, time: %s, value: %s\n", rawdata.getDeviceId(), rawdata.getId(), rawdata.getTime(), rawdata.getValue()[0]);
+            }
+
+            @Override
+            public void onHeartBeat(String topic, HeartBeat heartbeat) {
+                System.out.printf("HeartBeat - deviceId: %s, pulse: %s, from: %s, time: %s, type: %s\n", heartbeat.getDeviceId(), heartbeat.getPulse(), heartbeat.getFrom(), heartbeat.getTime(), heartbeat.getType());
+            }
+
+            @Override
+            public void onReconfigure(String topic, String apiKey) {
+                System.out.printf("Reconfigure - topic: %s, apiKey: %s\n", topic, apiKey);
+            }
+
+            @Override
+            public void onSetDeviceId(String topic, String apiKey, String deviceId) {
+                System.out.printf("SetDeviceId - topic: %s, apiKey: %s, deviceId: %s\n", topic, apiKey, deviceId);
+            }
+        });
+
+        mqcA.start(); // wait for incoming message
+        mqcB.start(); // wait for incoming message
+    }
+    */
 
     // SensorAdapter中取得SensorFragment的實例，並呼叫startActivityForResult
     @Override
@@ -278,6 +362,12 @@ public class SensorFragment extends Fragment {
 
     }
 
+    public void onRawdataChanged(final Rawdata rawdata) {
+        Log.v("iotapp","mqtt on message:"+rawdata.getId());  //JsonUtils.toJson(
+
+        // not yet implement refresh item in adaptor
+    }
+
     /*  AsyncTask enables proper and easy use of the UI thread.
             This class allows you to perform background operations and publish results
             on the UI thread without having to manipulate threads and/or handlers.
@@ -307,14 +397,17 @@ public class SensorFragment extends Fragment {
 
         }
 
+
+
         @Override
         protected String doInBackground(String... params) {
 
-            OpenRESTfulClient client = new OpenRESTfulClient(RESTful.HOST, RESTful.PORT, ApiKey);
+            OpenRESTfulClient client = new OpenRESTfulClient(IoTServer.RESTful_HOST, IoTServer.RESTful_PORT, ApiKey);
 
             try {
 
                 sensors = client.getSensors(device_id);
+
 
                 // 先清空現有資料，以免於SensorFragment按下手動更新時，造成item重複新增於list之上
                 list_SensorItem.clear();
@@ -327,6 +420,10 @@ public class SensorFragment extends Fragment {
                 {
 
                     for(int i = 0; i<length; i++) {
+
+                        // mqtt subscribe
+                        Log.v("iotapp","add subscribe: "+device_id+", "+sensors[i].getId());
+                        mqtt.subscribe(device_id, sensors[i].getId());
 
                         SensorItem item = new SensorItem();
 
@@ -418,6 +515,8 @@ public class SensorFragment extends Fragment {
                         progress = Math.round(i/max) * 100;
                         publishProgress(progress);
                     }
+
+                    mqtt.start();
                 }
 
             }
