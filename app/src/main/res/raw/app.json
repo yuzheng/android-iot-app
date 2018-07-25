@@ -1,6 +1,6 @@
 {
     "apiServer": "https://iot.cht.com.tw/iot/",
-	"apiKey": "PKXT2XGTMRFK3T9YXT",
+	"apiKey": "",
     "appInfo": {
         "name": "IOT APP",
         "description": null

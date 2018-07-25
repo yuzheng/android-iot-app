@@ -445,7 +445,7 @@ public class SensorFragment extends Fragment {
 
 
                         // If data have not initialize, we should give it a default value.
-                        if(str_RawData.length == 0)
+                        if(str_RawData == null || str_RawData.length == 0)
                         {
                             str_RawData = new String[1];
                             str_RawData[0] = "NO RAWDATA IN THIS SENSOR!";
@@ -467,7 +467,12 @@ public class SensorFragment extends Fragment {
                             item.setType(SensorItem.TOGGLEBTN);
 
                             boolean bool;
-                            int value = Integer.parseInt(str_RawData[0]);
+                            int value = 0;
+                            try {
+                                value = Integer.parseInt(str_RawData[0]);
+                            }catch(Exception e){
+                                
+                            }
                             if(value == 0)
                                 bool = false;
                             else
